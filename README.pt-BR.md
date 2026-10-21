@@ -200,9 +200,10 @@ O Attention Span enxuga o quanto o Claude fala. Essas duas governam quanto toda 
 skills invocadas pelo usuário (`/attention-kind`, `/spartan`, `/rundown`, `/tldr`). No Claude Code:
 
 ```
-/plugin marketplace add alexgreensh/attention-span
-/plugin install attention-span
+/plugin install attention-span --marketplace alexgreensh/attention-span
 ```
+
+No Claude Code anterior à 2.1.275, rode primeiro `/plugin marketplace add alexgreensh/attention-span` e depois `/plugin install attention-span`.
 
 Depois ative um estilo em `/config` → *Output style*, ou simplesmente digite uma skill como `/attention-kind`
 para uma conversa. Prefere configurar na mão? Os passos manuais abaixo ainda funcionam e não mudaram.

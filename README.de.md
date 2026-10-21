@@ -200,9 +200,10 @@ Attention Span kürzt, wie viel Claude sagt. Diese beiden steuern, was dein ganz
 nutzeraufgerufenen Skills (`/attention-kind`, `/spartan`, `/rundown`, `/tldr`). In Claude Code:
 
 ```
-/plugin marketplace add alexgreensh/attention-span
-/plugin install attention-span
+/plugin install attention-span --marketplace alexgreensh/attention-span
 ```
+
+Bei Claude Code älter als 2.1.275 zuerst `/plugin marketplace add alexgreensh/attention-span` ausführen, dann `/plugin install attention-span`.
 
 Danach aktivierst du einen Style unter `/config` → *Output style* – oder tippst einfach einen Skill wie `/attention-kind`
 für eine einzelne Unterhaltung. Lieber manuell verdrahten? Die manuellen Schritte unten funktionieren weiterhin unverändert.

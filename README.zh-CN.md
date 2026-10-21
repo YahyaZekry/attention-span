@@ -196,6 +196,16 @@ Attention Span 削减 Claude 说多少。这两个则管着你整个技术栈花
 
 ## 安装
 
+**最简单：安装插件。** 一步就能装好三种风格、`/style` 切换器，以及手动调用的技能（`/attention-kind`、`/spartan`、`/rundown`、`/tldr`）。在 Claude Code 中：
+
+```
+/plugin install attention-span --marketplace alexgreensh/attention-span
+```
+
+如果 Claude Code 版本低于 2.1.275，先运行 `/plugin marketplace add alexgreensh/attention-span`，再运行 `/plugin install attention-span`。
+
+想手动配置？下面的手动步骤依然可用。
+
 **1.** 把风格放进你的 output-styles 文件夹。全局（所有项目）：
 
 ```bash

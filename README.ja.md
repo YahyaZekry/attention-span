@@ -199,9 +199,10 @@ Attention Span は Claude の発話量を削ります。この 2 つはスタッ
 **一番簡単: プラグインをインストール。** 1 ステップで 3 つのスタイル、`/style` スイッチャー、ユーザー起動スキル（`/attention-kind`、`/spartan`、`/rundown`、`/tldr`）がすべて手に入ります。Claude Code で:
 
 ```
-/plugin marketplace add alexgreensh/attention-span
-/plugin install attention-span
+/plugin install attention-span --marketplace alexgreensh/attention-span
 ```
+
+Claude Code 2.1.275 より前のバージョンでは、先に `/plugin marketplace add alexgreensh/attention-span` を実行してから `/plugin install attention-span` を実行してください。
 
 その後 `/config` → *Output style* でスタイルを有効にするか、1 つの会話だけなら `/attention-kind` のようなスキルを入力するだけです。手動で設定したい場合は、以下の手動ステップも変わらず使えます。
 

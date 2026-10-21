@@ -198,6 +198,16 @@ Attention Span reduce cuánto dice Claude. Estas dos gobiernan lo que gasta todo
 
 ## Instalación
 
+**Lo más fácil: instala el plugin.** Un paso trae los tres estilos, el selector `/style` y las skills que invocas tú (`/attention-kind`, `/spartan`, `/rundown`, `/tldr`). En Claude Code:
+
+```
+/plugin install attention-span --marketplace alexgreensh/attention-span
+```
+
+Con una versión de Claude Code anterior a 2.1.275, ejecuta primero `/plugin marketplace add alexgreensh/attention-span` y después `/plugin install attention-span`.
+
+¿Prefieres hacerlo a mano? Los pasos manuales de abajo siguen funcionando.
+
 **1.** Coloca el estilo en tu carpeta de output-styles. Global (para todos los proyectos):
 
 ```bash

@@ -200,9 +200,10 @@ Attention Span trims how much Claude says. These two govern what your whole stac
 user-invoked skills (`/attention-kind`, `/spartan`, `/rundown`, `/tldr`). In Claude Code:
 
 ```
-/plugin marketplace add alexgreensh/attention-span
-/plugin install attention-span
+/plugin install attention-span --marketplace alexgreensh/attention-span
 ```
+
+On Claude Code older than 2.1.275, run `/plugin marketplace add alexgreensh/attention-span` first, then `/plugin install attention-span`.
 
 Then activate a style under `/config` → *Output style*, or just type a skill like `/attention-kind`
 for one conversation. Prefer wiring it up by hand? The manual steps below still work and are unchanged.
