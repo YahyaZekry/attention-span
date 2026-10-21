@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Generate user-invoked skill files from the output-style sources.
+"""Build the plugin folder (plugins/attention-span) from the root sources.
+
+The root output-styles/ and commands/ stay the source of truth, because the manual
+install curls them by URL. The plugin folder gets exact copies, plus skills generated
+from the styles. The release workflow fails if the copies drift, so rerun this after
+editing a style or the /style command.
+
+Skills:
 
 Each skill is self-contained (works in Claude.ai chat, not just Claude Code) and
 user-invoked only (`disable-model-invocation: true`) so it costs zero passive
@@ -14,6 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 VERSION = (ROOT / "VERSION").read_text().strip()
+PLUGIN = ROOT / "plugins" / "attention-span"
 
 # slug -> (skill name, one-line description stub shown in the picker)
 STYLES = {
@@ -53,7 +61,7 @@ def main() -> int:
             print(f"missing {src}", file=sys.stderr)
             return 1
         body = body_of(src)
-        out_dir = ROOT / "skills" / slug
+        out_dir = PLUGIN / "skills" / slug
         out_dir.mkdir(parents=True, exist_ok=True)
         skill = (
             "---\n"
@@ -67,7 +75,12 @@ def main() -> int:
             f"{body}\n"
         )
         (out_dir / "SKILL.md").write_text(skill)
-        print(f"wrote skills/{slug}/SKILL.md ({len(skill)} bytes)")
+        print(f"wrote {PLUGIN.name}/skills/{slug}/SKILL.md ({len(skill)} bytes)")
+    for rel in [f"output-styles/{slug}.md" for slug in STYLES] + ["commands/style.md", "LICENSE"]:
+        dst = PLUGIN / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_bytes((ROOT / rel).read_bytes())
+        print(f"copied {rel}")
     return 0
 
 

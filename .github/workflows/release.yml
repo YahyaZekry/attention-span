@@ -31,7 +31,7 @@ jobs:
           fi
 
           fail=0
-          for f in output-styles/*.md skills/*/SKILL.md; do
+          for f in output-styles/*.md plugins/attention-span/skills/*/SKILL.md; do
             if ! grep -q "attention-span v${FILE_VERSION} " "$f"; then
               echo "::error::$f is missing the 'attention-span v${FILE_VERSION}' marker."
               fail=1
@@ -40,6 +40,17 @@ jobs:
           [ "$fail" -eq 0 ] || { echo "::error::Fix the in-file version markers to match VERSION (regenerate skills with scripts/gen-skills.py), then re-tag."; exit 1; }
 
           echo "Version alignment OK: tag, VERSION, and all style + skill markers are $FILE_VERSION."
+
+      - name: Verify plugin copies match the root sources
+        run: |
+          set -euo pipefail
+          for rel in output-styles/attention-kind.md output-styles/spartan.md output-styles/rundown.md commands/style.md LICENSE; do
+            cmp -s "$rel" "plugins/attention-span/$rel" || { echo "::error::plugins/attention-span/$rel differs from $rel. Run scripts/gen-skills.py."; exit 1; }
+          done
+          PV="$(python3 -c 'import json;print(json.load(open("plugins/attention-span/.claude-plugin/plugin.json"))["version"])')"
+          MV="$(python3 -c 'import json;print(json.load(open(".claude-plugin/marketplace.json"))["plugins"][0]["version"])')"
+          case "$PV" in "${GITHUB_REF_NAME}"|"${GITHUB_REF_NAME}.0") ;; *) echo "::error::plugin.json version $PV does not match tag ${GITHUB_REF_NAME}"; exit 1;; esac
+          [ "$PV" = "$MV" ] || { echo "::error::marketplace.json version $MV does not match plugin.json $PV"; exit 1; }
 
       - name: Extract changelog section
         id: notes

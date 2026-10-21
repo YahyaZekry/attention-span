@@ -8,11 +8,18 @@
   "plugins": [
     {
       "name": "attention-span",
-      "source": ".",
+      "source": "./plugins/attention-span",
       "description": "Answer-first output styles for Claude Code, plus /tldr. Attention-kind, Spartan, Rundown as styles and user-invoked skills.",
       "homepage": "https://github.com/alexgreensh/attention-span",
       "license": "AGPL-3.0",
-      "keywords": ["output-style", "adhd", "brevity", "readability", "tldr"]
+      "keywords": [
+        "output-style",
+        "adhd",
+        "brevity",
+        "readability",
+        "tldr"
+      ],
+      "version": "0.9.0"
     }
   ]
 }

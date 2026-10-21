@@ -1,7 +1,7 @@
 ---
 description: Pick a Claude Code output style from a popup (attention-span styles)
 argument-hint: "[attention-kind|spartan|rundown|default]"
-allowed-tools: Glob, Read, Write, Edit, AskUserQuestion
+allowed-tools: Glob, Read, AskUserQuestion, Write(~/.claude/settings.json), Edit(~/.claude/settings.json), Write(.claude/settings.local.json), Edit(.claude/settings.local.json)
 disable-model-invocation: true
 ---
 

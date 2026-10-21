@@ -2,6 +2,12 @@
 
 Versioning: single rightmost number bumps (0.2 → 0.3 → 0.4 …).
 
+## 0.9
+
+- **Ready for Anthropic's plugin directory.** The plugin now installs from its own clean folder, with just the styles, skills and commands, plus an icon.
+- **Install in one line:** `/plugin install attention-span --marketplace alexgreensh/attention-span`. Every README language has it, including Spanish and Chinese.
+- **`/style` can only write your two settings files**, nothing else on disk.
+
 ## 0.8
 
 - **One-step install as a plugin.** `/plugin marketplace add alexgreensh/attention-span` then
