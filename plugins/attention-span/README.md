@@ -19,7 +19,7 @@ Then pick a style under `/config` → *Output style*, or type a skill like `/att
 
 ## Privacy
 
-Text only. No hooks, no MCP servers, no network calls, nothing collected. `/style` reads and writes only the `outputStyle` key in `~/.claude/settings.json` or the project's `.claude/settings.local.json`.
+Text only. No hooks, no MCP servers, no network calls, nothing collected. `/style` reads and writes only the `outputStyle` key in `~/.claude/settings.json` or the project's `.claude/settings.local.json`. Full policy: [PRIVACY.md](PRIVACY.md).
 
 Full docs, benchmarks and other agents: https://github.com/alexgreensh/attention-span
 
