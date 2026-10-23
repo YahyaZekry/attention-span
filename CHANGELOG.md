@@ -2,6 +2,10 @@
 
 Versioning: single rightmost number bumps (0.2 → 0.3 → 0.4 …).
 
+## 0.11
+
+- **Clearer plugin description.** The `/plugin` menu now says what attention-span is in one line: ADHD-friendly output styles that get straight to the point.
+
 ## 0.10
 
 - **`/style` finds the plugin's styles.** If you installed attention-span as a plugin, `/style` now lists its three styles and switches between them, instead of saying none are installed.

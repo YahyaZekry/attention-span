@@ -1,7 +1,7 @@
 {
   "name": "attention-span",
-  "version": "0.10.0",
-  "description": "Output styles that make Claude answer-first, plain, and easy to skim, plus a /tldr transform. Attention-kind, Spartan, and Rundown ship as both output styles and user-invoked skills.",
+  "version": "0.11.0",
+  "description": "ADHD-friendly output styles. Claude gets straight to the point, so you can pay attention, not tokens.",
   "author": {
     "name": "Alex Greenshpun",
     "url": "https://linkedin.com/in/alexgreensh"

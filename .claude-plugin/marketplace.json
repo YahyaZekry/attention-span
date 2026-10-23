@@ -1,6 +1,6 @@
 {
   "name": "attention-span",
-  "description": "Answer-first output styles for Claude Code and the Claude apps: Attention-kind, Spartan, Rundown, plus a /tldr transform.",
+  "description": "ADHD-friendly output styles. Claude gets straight to the point, so you can pay attention, not tokens.",
   "owner": {
     "name": "Alex Greenshpun",
     "url": "https://github.com/alexgreensh"
@@ -9,7 +9,7 @@
     {
       "name": "attention-span",
       "source": "./plugins/attention-span",
-      "description": "Answer-first output styles for Claude Code, plus /tldr. Attention-kind, Spartan, Rundown as styles and user-invoked skills.",
+      "description": "ADHD-friendly output styles. Claude gets straight to the point, so you can pay attention, not tokens.",
       "homepage": "https://github.com/alexgreensh/attention-span",
       "license": "AGPL-3.0",
       "keywords": [
@@ -19,7 +19,7 @@
         "readability",
         "tldr"
       ],
-      "version": "0.10.0"
+      "version": "0.11.0"
     }
   ]
 }
